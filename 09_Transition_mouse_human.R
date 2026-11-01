@@ -5,7 +5,6 @@
 ##   Part 3  转录因子表达沿轨迹（离线：GO:0003700 转录因子名单），找人鼠一致的转录因子
 ##   Part 4  Wnt/β-catenin（锂的靶点 GSK3β 下游）沿轨迹与随剂量的变化
 ##   Part 5  人类按样本：Classical Mono 占比、程序得分，AAA vs Control
-## 全部离线运行。依赖跨物种分析的结果：orthologs_1to1.csv、C_human_trajectory_object.rds、human_with_cross_species_annotations.rds
 ############################################################################
 mouse_rds <- "/home/data/t080553/Li_AAA/03_myeloid/mono_mac_5state.rds"
 cs_dir    <- "/home/data/t080553/Li_AAA/04_cross_species/results"
