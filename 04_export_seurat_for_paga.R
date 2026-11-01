@@ -9,11 +9,6 @@
 ##            X_data.mtx      lognormalised expression, cells x genes
 ##            genes.csv, cells.csv, export_config.txt
 ##
-## The embedding is exported as it stands in the object. It is not recomputed
-## here: the within-library PAGA in the Python script recomputes its own
-## embedding per library, and the merged run needs the same harmony space the
-## rest of the analysis used.
-##
 ## Usage:
 ##   mono_mac <- readRDS("mono_mac_5state.rds")
 ##   source("export_monomac.R")
