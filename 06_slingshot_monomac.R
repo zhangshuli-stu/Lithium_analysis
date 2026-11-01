@@ -11,24 +11,6 @@
 ##            pseudotime_quartiles_<TAG>.csv
 ##          plus sling_pt*, sling_w*, sling_lineage on the object
 ##
-## Two settings decide what this produces, and both are choices, not results:
-##
-##   OMEGA lets Slingshot return disjoint trees. Left at its default, the
-##   minimum spanning tree attaches every cluster to one backbone, so
-##   Osteoclast-like Mac is placed on a lineage despite PAGA connectivity
-##   below 0.1 to every state at every neighbourhood size from 5 to 20.
-##
-##   START_CLUS is an assumption. Slingshot orders cells away from the cluster
-##   you nominate; it cannot find the origin. Classical Mono is nominated from
-##   Ccr2/Ly6c2 marker identity, and the methods section should say so.
-##
-## Resident Mac is excluded from fitting: 98.6% of those cells come from one
-## library, and in the integrated embedding their distance to Remodeling Mac
-## is shorter than Classical Mono to Transitional Mac, so no omega separates
-## Resident Mac without also severing the Mono-Transitional edge that every
-## within-library analysis recovered. Set DROP_STATES to character(0) to see
-## this for yourself.
-##
 ## Usage:
 ##   mono_mac <- readRDS("mono_mac_5state.rds")
 ##   source("slingshot_monomac.R")
