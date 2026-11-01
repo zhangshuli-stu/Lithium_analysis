@@ -16,38 +16,6 @@
 ##          mhc2_stats.csv, method_agreement.csv, cells.csv
 ##        plus monocle_pt / monocle_partition on mono_mac
 ##
-## ---------------------------------------------------------------------------
-## Choices that shape the output, and why
-##
-## Resident Mac is excluded from the fit. 98.6% of those cells come from one
-## library, so in the integrated embedding their position is set by Harmony
-## rather than by biology. Including them moves the graph: Slingshot's
-## spanning tree then took Resident-Remodeling (the strongest edge in the
-## integrated PAGA graph) and dropped Transitional-Remodeling, which every
-## within-library analysis recovered, while Monocle3 placed Resident Mac
-## terminally instead of mid-trajectory. The two disagreed, which is itself
-## the reason not to build on it.
-##
-## Osteoclast-like Mac is kept in the graph but excluded from pseudotime and
-## module analyses. All 61 cells project onto a single graph vertex
-## (interquartile range < 0.1), and the value that vertex carries moved from
-## 16.7 to 10.7 when Resident Mac was dropped - it describes the shape of the
-## principal graph, not a position on the trajectory.
-##
-## The root is assumed, not found. Monocle3 orders cells away from the root it
-## is given; Classical Mono is nominated on Ccr2/Ly6c2 marker identity, and
-## the methods should say so rather than claiming the trajectory identified
-## the origin.
-##
-## Genes are clustered on correlation distance, not by k-means on Euclidean
-## distance. The closing programme shuts down at different points for
-## different genes - Sell and Ly6c2 reach zero before pseudotime 5, Ccr2
-## declines throughout - and Euclidean distance reads that as dissimilarity.
-## k-means split it and left a module with a gene-to-profile correlation of
-## 0.42 under every setting tried; Ward linkage on 1 - correlation puts all
-## three modules above 0.70 with the same biology, and recovers the MHC II
-## module on its own rather than needing it removed by hand.
-##
 ## Usage
 ##   mono_mac <- readRDS("mono_mac_5state.rds")
 ##   source("monocle3_monomac.R")
