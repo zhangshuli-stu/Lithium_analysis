@@ -12,21 +12,6 @@ Output:  results_paga/
            sample<L>/<L>.h5ad
            merged/...                  same, on the harmony embedding
 
-Which run is the evidence
-  In this design sample, dose and library are one variable, so a merged run on
-  harmony cannot separate biology from integration. A state confined to one
-  library gets pulled towards whichever cluster it most resembles elsewhere,
-  and the resulting edge is unfalsifiable. The within-library runs carry no
-  batch structure at all and are the evidence; the merged run is an overview.
-  An edge that appears only in the merged graph is an integration result.
-
-Comparing across libraries
-  Connectivity is observed edges over edges expected at random, and the
-  expectation depends on how many clusters are in the graph and how large each
-  is. The four libraries differ enormously in composition, so their raw values
-  are not on a common scale. Compare the ORDER of edges within a library
-  across libraries, not the numbers.
-
 Usage:
   python paga_monomac.py --mode within           # per library, the evidence
   python paga_monomac.py --mode merged           # harmony, the overview
