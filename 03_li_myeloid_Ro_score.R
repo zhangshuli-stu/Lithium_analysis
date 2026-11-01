@@ -79,13 +79,15 @@ subtype_colors <- c(
   "Hb-high" = "#BEBEBE", "Platelet-associated" = "#8C8C8C"
 )
 
+sub_colors <- subtype_colors
+
 ###################### ROGUE: Purity ########################
 # Calculate the ROGUE value of each putative cluster for each sample
 
 library(ROGUE)
 library(tibble)
 
-scRNA <- readRDS("./myeloid.rds")
+scRNA <- readRDS("/home/data/t080553/Li_AAA/03_myeloid/myeloid.rds")
 Idents(scRNA) <- scRNA$celltype_major
 metadata <- scRNA@meta.data
 expr <- as.matrix(LayerData(scRNA, assay = "RNA", layer = "counts"))
@@ -241,9 +243,8 @@ p <- ggplot(roe_df, aes(x = tissue, y = subtype, fill = Roe)) +
   geom_text(aes(label = label, color = Roe > 1.4),
             size = 4, fontface = "bold") +
   scale_fill_gradientn(
-    colors = c(
-      "#7186B8", "#B2BEDD", "#FAF8FB", "#E7AFC0", "#B95F7E"),
-    # colors = c("#7C9BB5", "#B8CBD9", "#F4F1EC", "#E8C4B8", "#C97B6B"),
+    # colors = c("#7186B8", "#B2BEDD", "#FAF8FB", "#E7AFC0", "#B95F7E"),
+    colors = c("#7C9BB5", "#B8CBD9", "#F4F1EC", "#E8C4B8", "#C97B6B"),
     values = scales::rescale(c(0, 0.6, 1, 1.4, 2)),
     limits = c(0, 2), oob = scales::squish,
     breaks = c(0, 1, 2),
