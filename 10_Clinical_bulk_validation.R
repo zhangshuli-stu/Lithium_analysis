@@ -9,7 +9,6 @@
 ##   Step 6  TFEC 敏感性分析：同时校正髓系和 B 细胞含量
 ##   Step 7  单细胞支撑数据：TFEC 细胞来源（人类全组织）、小鼠各巨噬亚群 Tfec 随剂量（结果缓存为 csv）
 ##   Step 8  临床部分主图（Figure_clinical_main.pdf，a–f）与补充图（Supp_ 开头）
-## 全部离线运行
 ############################################################################
 bulk_dir <- "/home/data/t080553/Li_AAA/rawdata"
 cs_dir   <- "/home/data/t080553/Li_AAA/04_cross_species"
