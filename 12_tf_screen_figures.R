@@ -3,7 +3,6 @@
 ##   图 1  筛选示意：289 个候选转录因子的人鼠轨迹趋势散点，37 个一致的着色，6 个 key TFs 标名
 ##   图 2  系统检验：37 个人鼠一致的转录因子全部在 bulk 队列中检验（37 个之间做 FDR 校正）
 ##         2a 破裂 vs 大瘤体排序图   2b 火山图   2c 四类临床比较的效应量热图
-## 全部离线运行；依赖 05_transition 的 P3 结果与 rawdata 中的 bulk 数据
 ############################################################################
 tf_csv   <- "/home/data/t080553/Li_AAA/05_transition/P3_TF_expression_conservation.csv"
 bulk_dir <- "/home/data/t080553/Li_AAA/rawdata"
